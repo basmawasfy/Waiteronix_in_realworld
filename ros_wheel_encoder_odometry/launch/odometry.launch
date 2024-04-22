@@ -10,8 +10,8 @@
   </node>
   
  
-  <param command="$(find xacro)/xacro '$(find wheel_encoder)/urdf/odom_baselink.xacro'" name="robot_description"/>
-  <node args="-param robot_description -urdf -model waiteronix11" name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"/>
+  <!--param command="$(find xacro)/xacro '$(find wheel_encoder)/urdf/odom_baselink.xacro'" name="robot_description"/>
+  <node args="-param robot_description -urdf -model waiteronix11" name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"/-->
 
 </launch>
 

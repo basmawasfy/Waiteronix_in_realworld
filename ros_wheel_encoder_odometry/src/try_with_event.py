@@ -22,8 +22,8 @@ def read_from_port(ser, right_publisher,left_publisher):
            print("Values:", values)  # Add this line to check the content of values
     	   c1 = values[1].split('=')[1]
            c2 = values[2].split('=')[1]
-           right_ticks = int(c1)
-           left_ticks = int(c2)
+           right_ticks = -int(c2)
+           left_ticks = int(c1)
 
            # Publish the received data as a ROS message
            right_publisher.publish(right_ticks)

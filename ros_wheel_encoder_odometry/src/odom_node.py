@@ -19,7 +19,7 @@ class WheelEncoderOdom:
         
         self.wheelbase = 0.45  # Distance between wheels (adjust as needed)
         self.wheel_radius = 0.08  # Wheel radius (adjust as needed)
-        self.ticks_per_revolution = 32  # Ticks per revolution (adjust as needed)
+        self.ticks_per_revolution = 31  # Ticks per revolution (adjust as needed)
         
         self.pose_x = 0.0
         self.pose_y = 0.0
