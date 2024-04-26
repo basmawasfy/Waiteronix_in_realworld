@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+   <include file="$(find ros_wheel_encoder_odometry)/launch/odometry.launch"/>
+   
+   <include file="$(find rplidar_ros)/launch/rplidar_a2m12.launch"/>
+   <include file="$(find waitronix11 )/launch/laser_filters.launch"/>
+   
+   <include file="$(find waitronix11 )/launch/rviz.launch"/>
+   <node pkg="rviz" type="rviz" name="rviz">
+   </node>
+
+   <include file="$(find gmapping )/launch/gmapping.launch"/>
+   <node pkg="map_server" type="map_saver" name="map_saver" args="-f $(arg Waiteronix_in_realworld\map)" >
+   </node>
+   
+</launch>
