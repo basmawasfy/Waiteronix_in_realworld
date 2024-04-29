@@ -58,7 +58,7 @@ class WheelEncoderOdom:
         odom_msg = Odometry()
         odom_msg.header.stamp = rospy.Time.now()
         odom_msg.header.frame_id = "odom"
-        odom_msg.child_frame_id = "base_link"
+        odom_msg.child_frame_id = "robot_footprint"
         
         odom_msg.pose.pose.position.x = self.pose_x
         odom_msg.pose.pose.position.y = self.pose_y
@@ -83,7 +83,7 @@ class WheelEncoderOdom:
         (self.pose_x, self.pose_y , 0.),
         odom_quat,
         current_time,
-        "base_link",
+        "robot_footprint",
         "odom" )
         ##################################################
         

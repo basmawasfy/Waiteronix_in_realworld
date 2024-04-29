@@ -3,9 +3,9 @@
 
   <!-- "camera" should uniquely identify the device. All topics are pushed down
        into the "camera" namespace, and it is prepended to tf frame ids. -->
-  <arg name="camera" default="camera" />
-  <arg name="rgb_frame_id"   default="$(arg camera)_rgb_optical_frame" />
-  <arg name="depth_frame_id" default="$(arg camera)_depth_optical_frame" />
+  <arg name="camera" default="camera_Link" />
+  <arg name="rgb_frame_id"   default="$(arg camera_Link)_rgb_optical_frame" />
+  <arg name="depth_frame_id" default="$(arg camera_Link)_depth_optical_frame" />
 
   <arg name="data_skip" default="0" />
 
@@ -66,10 +66,10 @@
   <arg name="diagnostics_window_time" default="5.0" />
  
   <!-- Push down all topics/nodelets into "camera" namespace -->
-  <group ns="$(arg camera)">
+  <group ns="$(arg camera_Link)">
 
     <!-- Start nodelet manager in provided namespace -->
-    <arg name="manager" value="$(arg camera)_nodelet_manager" />
+    <arg name="manager" value="$(arg camera_Link)_nodelet_manager" />
     <arg name="debug" default="false" /> <!-- Run manager in GDB? -->
     <include file="$(find rgbd_launch)/launch/includes/manager.launch.xml">
       <arg name="name"                value="$(arg manager)" />
@@ -129,7 +129,7 @@
   <!-- Load reasonable defaults for the relative pose between cameras -->
   <include if="$(arg publish_tf)"
 	   file="$(find rgbd_launch)/launch/kinect_frames.launch">
-    <arg name="camera" value="$(arg camera)" />
+    <arg name="camera" value="$(arg camera_Link)" />
   </include>
 
 </launch>

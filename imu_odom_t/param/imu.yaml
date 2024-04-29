@@ -14,7 +14,7 @@ imu0_differential: false
 
 map_frame: map
 odom_frame: odom
-base_link_frame: base_link
+base_link_frame: robot_footprint
 world_frame: odom
 imu_frame : imu_Link
 
