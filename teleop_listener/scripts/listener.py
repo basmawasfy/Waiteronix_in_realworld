@@ -9,7 +9,7 @@ wheel_radius = 0.1  # Radius of the wheels
 serial_msg = ""
 
 # Define serial port and baudrate
-ser = serial.Serial('/dev/ttyUSB1', 9600)  # Assuming USB0 is the port and baudrate is 9600
+ser = serial.Serial('/dev/ttyUSB1', 9600)  # Assuming USB1 is the port and baudrate is 9600
 
 def convert_cmd_to_pwm():
     global linear_velocity
@@ -25,7 +25,7 @@ def convert_cmd_to_pwm():
 
     # Determine the direction of the wheel velocities
     dir_l = 1 if vel_l >= 0 else 0
-    dir_r = 1 if vel_r >= 0 else 0
+    dir_r = 0 if vel_r >= 0 else 1
 
     # Take the absolute values of the wheel velocities
     vel_l = abs(vel_l)
@@ -34,7 +34,8 @@ def convert_cmd_to_pwm():
 
 def format_serialmsg():
     global serial_msg
-    serial_msg = '$' + str(dir_r) + str(dir_l) + str(int(vel_r * 15.085)) + 's'  # Assuming you need integer values for velocity
+    serial_msg ='$'+str(dir_r)+str(dir_l)+str(int(vel_r*15.085))+'B'+str(int(vel_l*15.085))+'s' 
+
 
 
 def callback(twist_msg):
