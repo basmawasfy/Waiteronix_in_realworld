@@ -212,7 +212,7 @@
       xyz="0 0 0" />
   </joint>
   <link
-    name="camera_Link">
+    name="camera">
     <inertial>
       <origin
         xyz="-0.027769 0.026365 -0.00028162"
@@ -233,7 +233,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://waiteronix_description/meshes/camera_Link.STL" />
+          filename="package://waiteronix_description/meshes/camera.STL" />
       </geometry>
       <material
         name="">
@@ -247,7 +247,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://waiteronix_description/meshes/camera_Link.STL" />
+          filename="package://waiteronix_description/meshes/camera.STL" />
       </geometry>
     </collision>
   </link>
@@ -260,7 +260,7 @@
     <parent
       link="base_link" />
     <child
-      link="camera_Link" />
+      link="camera" />
     <axis
       xyz="0 0 0" />
   </joint>
