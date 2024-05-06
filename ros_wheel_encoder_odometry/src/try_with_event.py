@@ -15,7 +15,8 @@ def read_from_port(ser, right_publisher,left_publisher):
         # Read a line of data from the serial port
         line = ser.readline().decode().strip()
         d = str(line)
-        if(d != ""):
+	count= d.count('=')
+        if(count==3):
            print (d)
            rospy.loginfo("Received: %s", line)
            values = d.split(',')

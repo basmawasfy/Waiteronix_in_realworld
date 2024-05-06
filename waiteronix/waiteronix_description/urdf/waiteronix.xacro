@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="waiteronix_description" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!--xacro:include filename="$(find waiteronix_description)/urdf/waiteronix.gazebo"/> -->
+  <link name="robot_footprint">
+  </link>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.00098907 2.3401E-06 -0.0041876"
+        rpy="0 0 0" />
+      <mass
+        value="12.939" />
+      <inertia
+        ixx="0.26837"
+        ixy="1.6584E-07"
+        ixz="-0.014307"
+        iyy="0.30382"
+        iyz="-4.044E-07"
+        izz="0.34715" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiteronix_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.77647 0.75686 0.73725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiteronix_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="right_wheel_Link">
+    <inertial>
+      <origin
+        xyz="3.5151E-14 0.037433 2.3641E-14"
+        rpy="0 0 0" />
+      <mass
+        value="1.1947" />
+      <inertia
+        ixx="0.0021952"
+        ixy="7.1937E-19"
+        ixz="-3.6008E-19"
+        iyy="0.0036631"
+        iyz="-1.5992E-17"
+        izz="0.0021952" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiteronix_description/meshes/right_wheel_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiteronix_description/meshes/right_wheel_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+      <joint name="dummy_joint" type="fixed">
+    <parent link="robot_footprint"/>
+    <child link="base_link"/>
+   </joint>
+
+  <joint
+    name="right_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.055778 -0.22402 -0.14586"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_wheel_Link" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="left_wheel_Link">
+    <inertial>
+      <origin
+        xyz="3.8637E-14 -0.037433 1.7111E-14"
+        rpy="0 0 0" />
+      <mass
+        value="1.1947" />
+      <inertia
+        ixx="0.0021952"
+        ixy="1.6171E-19"
+        ixz="-2.5617E-19"
+        iyy="0.0036631"
+        iyz="-1.2217E-17"
+        izz="0.0021952" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiteronix_description/meshes/left_wheel_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiteronix_description/meshes/left_wheel_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.055778 0.22398 -0.14586"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_wheel_Link" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="imu_Link">
+    <inertial>
+      <origin
+        xyz="7.115E-14 -2.5065E-14 -0.005"
+        rpy="0 0 0" />
+      <mass
+        value="0.0007854" />
+      <inertia
+        ixx="1.1454E-08"
+        ixy="-2.5419E-25"
+        ixz="-3.7851E-24"
+        iyy="1.1454E-08"
+        iyz="9.2892E-24"
+        izz="9.8175E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiteronix_description/meshes/imu_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0.75294 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiteronix_description/meshes/imu_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="imu_joint"
+    type="fixed">
+    <origin
+      xyz="-0.04705 -1.8081E-05 0.099336"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="imu_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+  <link
+    name="camera">
+    <inertial>
+      <origin
+        xyz="-0.027769 0.026365 -0.00028162"
+        rpy="0 0 0" />
+      <mass
+        value="0.55893" />
+      <inertia
+        ixx="0.0029329"
+        ixy="-9.3577E-07"
+        ixz="8.9524E-08"
+        iyy="0.00023177"
+        iyz="-9.4268E-09"
+        izz="0.0030272" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiteronix_description/meshes/camera.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.49412 0.49412 0.49412 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiteronix_description/meshes/camera.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="camera_joint"
+    type="fixed">
+    <origin
+      xyz="0.20464 -0.026325 0.80466"
+      rpy="0 0.34907 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="camera" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="lidar_Link">
+    <inertial>
+      <origin
+        xyz="-2.7756E-17 5.889E-19 -0.032387"
+        rpy="0 0 0" />
+      <mass
+        value="0.24913" />
+      <inertia
+        ixx="0.00016349"
+        ixy="-8.0434E-21"
+        ixz="-1.3497E-20"
+        iyy="0.00016389"
+        iyz="-8.6878E-22"
+        izz="0.0001528" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiteronix_description/meshes/lidar_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0.75294 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiteronix_description/meshes/lidar_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lidar_joint"
+    type="fixed">
+    <origin
+      xyz="0.13795 -1.8081E-05 0.0097229"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="lidar_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="fw_front_right_Link">
+    <inertial>
+      <origin
+        xyz="-2.7756E-17 -3.4694E-16 9.8185E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.057532" />
+      <inertia
+        ixx="1.4957E-05"
+        ixy="-2.1947E-21"
+        ixz="-7.226E-23"
+        iyy="2.5487E-05"
+        iyz="-1.6044E-19"
+        izz="1.4957E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiteronix_description/meshes/fw_front_right_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.50196 0.50196 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiteronix_description/meshes/fw_front_right_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fw_front_right_Joint"
+    type="continuous">
+    <origin
+      xyz="0.14201 -0.12302 -0.19928"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="fw_front_right_Link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="fw_front_left_Link">
+    <inertial>
+      <origin
+        xyz="-2.7756E-17 -1.9429E-16 -1.4554E-15"
+        rpy="0 0 0" />
+      <mass
+        value="0.057532" />
+      <inertia
+        ixx="1.4957E-05"
+        ixy="-1.6471E-20"
+        ixz="-3.3309E-22"
+        iyy="2.5487E-05"
+        iyz="-1.1346E-19"
+        izz="1.4957E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiteronix_description/meshes/fw_front_left_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.50196 0.50196 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiteronix_description/meshes/fw_front_left_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fw_front_left_joint"
+    type="continuous">
+    <origin
+      xyz="0.14201 0.12298 -0.19928"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="fw_front_left_Link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="fw_back_left_Link">
+    <inertial>
+      <origin
+        xyz="3.2752E-15 1.7208E-15 -3.7765E-15"
+        rpy="0 0 0" />
+      <mass
+        value="0.057532" />
+      <inertia
+        ixx="1.4957E-05"
+        ixy="5.1414E-22"
+        ixz="1.0489E-21"
+        iyy="2.5487E-05"
+        iyz="-1.1999E-19"
+        izz="1.4957E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiteronix_description/meshes/fw_back_left_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.50196 0.50196 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiteronix_description/meshes/fw_back_left_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fw_back_left_joint"
+    type="continuous">
+    <origin
+      xyz="-0.23705 0.12148 -0.19928"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="fw_back_left_Link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="fw_back_right_Link">
+    <inertial>
+      <origin
+        xyz="3.3029E-15 1.7902E-15 -4.028E-15"
+        rpy="0 0 0" />
+      <mass
+        value="0.057532" />
+      <inertia
+        ixx="1.4957E-05"
+        ixy="-3.158E-20"
+        ixz="-2.417E-21"
+        iyy="2.5487E-05"
+        iyz="-1.1193E-19"
+        izz="1.4957E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiteronix_description/meshes/fw_back_right_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.50196 0.50196 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiteronix_description/meshes/fw_back_right_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fw_back_right_joint"
+    type="continuous">
+    <origin
+      xyz="-0.23705 -0.12152 -0.19928"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="fw_back_right_Link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+</robot>
