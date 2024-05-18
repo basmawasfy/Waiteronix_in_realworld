@@ -15,5 +15,5 @@ local_costmap:
    origin_y: 0.0
    plugins:
     - {name: laser_layer,         type: "costmap_2d::ObstacleLayer"} 
- #  - {name: rgbd_obstacle_layer, type: "spatio_temporal_voxel_layer/SpatioTemporalVoxelLayer"}
+    - {name: rgbd_obstacle_layer, type: "spatio_temporal_voxel_layer/SpatioTemporalVoxelLayer"}
     - {name: inflation_layer,     type: "costmap_2d::InflationLayer"}
