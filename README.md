@@ -22,6 +22,8 @@ source devel/setup.bash
 roslaunch gmapping get_map.launch
 ```
 >Note: we changed coordinates of base_link to make odom , map , footprint frames at the same location at the initial state in (waiteronix/waiteronix_description/urdf/waiteronix.xacro).
+
 >Note: modify custer_wheel frame to be fixed instead of continous(waiteronix/waiteronix_description/urdf/waiteronix.xacro).
+
 >Note: modify lidar_joint to be 3.14 instead of 0 in (waiteronix/waiteronix_description/urdf waiteronix.xacro).
 ### Navigation
