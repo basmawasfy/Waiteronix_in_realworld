@@ -11,7 +11,7 @@
     name="base_link">
     <inertial>
       <origin
-        xyz="0.00098907 2.3401E-06 -0.0041876"
+        xyz="0 0 -0.0041876"
         rpy="0 0 0" />
       <mass
         value="12.939" />
@@ -269,7 +269,7 @@
     name="lidar_Link">
     <inertial>
       <origin
-        xyz="-2.7756E-17 5.889E-19 -0.032387"
+        xyz="2.7756E-17 5.889E-19 -0.032387"
         rpy="0 0 0" />
       <mass
         value="0.24913" />
@@ -310,7 +310,7 @@
     type="fixed">
     <origin
       xyz="0.13795 -1.8081E-05 0.0097229"
-      rpy="0 0 0" />
+      rpy="0 0 3.14159" />
     <parent
       link="base_link" />
     <child
@@ -360,7 +360,7 @@
   </link>
   <joint
     name="fw_front_right_Joint"
-    type="continuous">
+    type="fixed">
     <origin
       xyz="0.14201 -0.12302 -0.19928"
       rpy="0 0 0" />
@@ -413,7 +413,7 @@
   </link>
   <joint
     name="fw_front_left_joint"
-    type="continuous">
+    type="fixed">
     <origin
       xyz="0.14201 0.12298 -0.19928"
       rpy="0 0 0" />
@@ -466,7 +466,7 @@
   </link>
   <joint
     name="fw_back_left_joint"
-    type="continuous">
+    type="fixed">
     <origin
       xyz="-0.23705 0.12148 -0.19928"
       rpy="0 0 0" />
@@ -519,7 +519,7 @@
   </link>
   <joint
     name="fw_back_right_joint"
-    type="continuous">
+    type="fixed">
     <origin
       xyz="-0.23705 -0.12152 -0.19928"
       rpy="0 0 0" />
