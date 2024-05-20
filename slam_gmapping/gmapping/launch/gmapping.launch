@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <launch>
   <node pkg="gmapping" type="slam_gmapping" name="salm_gmapping" output="screen">
-    <remap from="scan" to="scan_filtered" />
+    <remap from="/scan" to="/scan_filtered" />
     <param name="use_sim_time" value="false" />
-    <param name="base_farme" value="robot_footprint"/>
-    <param name="odom_farme" value="odom"/>
-    <param name="map_farme" value="map"/>
+    <param name="base_frame" value="robot_footprint"/>
+    <param name="odom_frame" value="odom"/>
+    <param name="map_frame" value="map"/>
     <param name="map_update_interval" value="2.0"/>
     <param name="maxUrange" value="20.0"/>
     <param name="sigma" value="0.05"/>
@@ -36,6 +36,15 @@
     <param name="llsamplestep" value="0.01"/>
     <param name="lasamplerange" value="0.005"/>
     <param name="lasamplestep" value="0.005"/>
+
+    
+    <!-- These parameters define the initial pose of the robot for the GMapping SLAM algorithm -->
+    <!--
+    <param name="initial_pose_x" value="0.0" />
+    <param name="initial_pose_y" value="0.0" />
+    <param name="initial_pose_a" value="0.0" /> 
+    -->
+
   </node>
 </launch>
 
